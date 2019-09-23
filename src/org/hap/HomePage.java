@@ -25,11 +25,43 @@ public class HomePage {
 		List<WebElement> de=s1.getOptions();
 		s1.selectByIndex(2);
 		WebElement depdate=d.findElement(By.name("departuredate"));
-		depdate.sendKeys("25Sep2019");
+		depdate.sendKeys("12Oct2019");
 		Thread.sleep(5000);
 		WebElement login=d.findElement(By.xpath("(//input[@type='submit'])[1]"));
 		login.click();
 		
+		
+		Thread.sleep(20000);
+		WebElement withoutlogin=d.findElement(By.id("btnContinue"));
+		withoutlogin.click();
+		WebElement firstname=d.findElement(By.id("FirstName1"));
+		firstname.sendKeys("udhayakumar");
+		WebElement lastname = d.findElement(By.id("FamilyName1"));
+		lastname.sendKeys("m");
+		WebElement mob = d.findElement(By.id("ContactMobileNumber"));
+		mob.sendKeys("9999999999");
+		WebElement mail = d.findElement(By.id("EmailAddress"));
+		mail.sendKeys("12345@gmail.com");
+		WebElement card = d.findElement(By.id("ucxCreditCardDetails_CreditCardType"));
+		Select s2=new Select(card);
+		List<WebElement> c=s2.getOptions();
+		s2.selectByIndex(3);
+		WebElement cardnumber = d.findElement(By.id("ucxCreditCardDetails_CreditCardNumber"));
+		cardnumber.sendKeys("12345678");
+		WebElement expdate = d.findElement(By.id("ucxCreditCardDetails_CreditCardExpiryMonth"));
+		Select s3=new Select(expdate);
+		List<WebElement> exp=s3.getOptions();
+		s3.selectByIndex(6);
+		WebElement expyear = d.findElement(By.id("ucxCreditCardDetails_CreditCardExpiryYear"));
+		Select s4=new Select(expyear);
+		List<WebElement> expy=s4.getOptions();
+		s4.selectByIndex(5);
+		WebElement holdername=d.findElement(By.id("ucxCreditCardDetails_CardHolderName"));
+		holdername.sendKeys("udhayakumar");
+		WebElement sec=d.findElement(By.id("ucxCreditCardDetails_SecurityCVVCode"));
+		sec.sendKeys("1234");
+		WebElement check=d.findElement(By.id("chkAccept"));
+		check.click();
 	}
 
 }
